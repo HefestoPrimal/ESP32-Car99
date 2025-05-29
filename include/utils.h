@@ -2,12 +2,18 @@
   #define UTILS_H
   #include <Arduino.h>
 
-  #define ruedaDelIzq 21
-  #define ruedaDelDer 22
-  #define ruedaTraIzq 23
-  #define ruedaTraDer 19
-  #define luces 18
-  #define claxon 5
+  #define ruedaDelIzqT1 21
+  #define ruedaDelIzqT2 21
+  #define ruedaDelDerT1 22
+  #define ruedaDelDerT2 22
+
+  #define ruedaTraIzqT1 23
+  #define ruedaTraIzqT2 23
+  #define ruedaTraDerT1 19
+  #define ruedaTraDerT2 19
+
+  #define luces 15
+  #define claxon 4
   #define LED_STATUS 2
 
   extern bool DEBUG;
@@ -19,4 +25,5 @@
       static void blinkPin(int pin, int times, int delayTime);
       static void manejoLed(int pin, int tiempo, int frecuencia);
   };
+
 #endif

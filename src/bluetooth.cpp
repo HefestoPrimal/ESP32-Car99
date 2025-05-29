@@ -2,10 +2,13 @@
 #include "utils.h"
 #include "control.h"
 
+BluetoothSerial SerialBT; // Crear instancia de BluetoothSerial
+
 bool estadoLuces = false;
 
 void Bluetooth::iniciar() {
   Serial.begin(115200);
+  SerialBT.begin("Anvil");
   while (!Serial) {
     Utils::blinkPin(LED_STATUS, 1, 200); // Esperar a que la conexión serial esté lista
     Utils::imprimirSerial("Esperando conexión serial...", "amarillo");
@@ -15,8 +18,9 @@ void Bluetooth::iniciar() {
 }
 
 void Bluetooth::manejar() {
-  if (Serial.available()) {
+  if (SerialBT.available()) {
     String comando = Bluetooth::leerComando();
+    Utils::blinkPin(LED_STATUS, 2, 250); // Parpadear LED de estado al recibir un comando
     if (comando == "A") {
       Utils::imprimirSerial("Adelante", "cyan");
       Control::moverRuedas('A', 'A'); // Mover ruedas adelante
@@ -39,14 +43,19 @@ void Bluetooth::manejar() {
     } else if (comando == "C") {
       Utils::imprimirSerial("Claxon activado", "cyan");
       Utils::blinkPin(claxon, 3, 300); // Activar claxon
+    } else if (comando == "T") {
+      Utils::imprimirSerial("Test general de control", "cyan");
+      Control::testGeneral(); // Ejecutar test general de control
+    } else {
+      Utils::imprimirSerial("Comando no reconocido: [" + comando + "]", "rojo"); // Comando no reconocido
     }
   }
 }
 
 String Bluetooth::leerComando() {
   String comando = "";
-  while (Serial.available()) {
-    char c = Serial.read();
+  while (SerialBT.available()) {
+    char c = SerialBT.read();
     if (c == '\n' || c == '\r') {
       if (comando.length() > 0) {
         return comando; // Retornar el comando completo
