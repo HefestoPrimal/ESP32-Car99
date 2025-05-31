@@ -10,7 +10,7 @@ void Bluetooth::iniciar() {
   Serial.begin(115200);
   SerialBT.begin("Anvil");
   while (!Serial) {
-    Utils::blinkPin(LED_STATUS, 1, 200); // Esperar a que la conexión serial esté lista
+    Utils::blinkPin(LED_STATUS, 2, 750); // Esperar a que la conexión serial esté lista
     Utils::imprimirSerial("Esperando conexión serial...", "amarillo");
     delay(100);
   }

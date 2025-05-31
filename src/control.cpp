@@ -2,7 +2,7 @@
 #include "utils.h"
 
 void Control::iniciar() {
-    Utils::imprimirSerial("Control iniciado", "verde");
+  Utils::imprimirSerial("Control iniciado", "verde");
 }
 
 void Control::moverRuedas(char ruedasIzq, char ruedasDer) {
