@@ -2,6 +2,7 @@
   #define UTILS_H
   #include <Arduino.h>
 
+  /*
   #define ruedaDelIzqT1 15
   #define ruedaDelIzqT2 4
   #define ruedaDelDerT1 5
@@ -10,7 +11,11 @@
   #define ruedaTraIzqT1 19
   #define ruedaTraIzqT2 21
   #define ruedaTraDerT1 22
-  #define ruedaTraDerT2 23
+  #define ruedaTraDerT2 23*/
+
+  #define DATA 15
+  #define LATCH 4
+  #define CLOCK 5
 
   #define luces 13
   #define claxon 12

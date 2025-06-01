@@ -4,7 +4,7 @@
   class Control {
     public:
       static void iniciar();
-      static void moverRuedas(char ruedasIzq, char ruedasDer); // 'A' Adelante 'R' Reversa 'D' Detener
+      static void moverRuedas(char movimiento); // 'A' Adelante 'R' Reversa 'P' Detener 'D' Derecha 'I' Izquierda
       static void testGeneral();
   };
 

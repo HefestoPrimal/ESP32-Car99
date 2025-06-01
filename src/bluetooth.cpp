@@ -8,7 +8,7 @@ bool estadoLuces = false;
 
 void Bluetooth::iniciar() {
   Serial.begin(115200);
-  SerialBT.begin("Anvil");
+  SerialBT.begin("Buggy BT"); // Nombre del dispositivo Bluetooth
   while (!Serial) {
     Utils::blinkPin(LED_STATUS, 2, 750); // Esperar a que la conexión serial esté lista
     Utils::imprimirSerial("Esperando conexión serial...", "amarillo");
@@ -21,33 +21,42 @@ void Bluetooth::manejar() {
   if (SerialBT.available()) {
     String comando = Bluetooth::leerComando();
     Utils::blinkPin(LED_STATUS, 2, 50); // Parpadear LED de estado al recibir un comando
+
     if (comando == "A") {
-      Utils::imprimirSerial("Adelante", "cyan");
-      Control::moverRuedas('A', 'A'); // Mover ruedas adelante
+      Utils::imprimirSerial("Adelante ^\n", "cyan");
+      Control::moverRuedas('A'); // Mover ruedas adelante
+
     } else if (comando == "R") {
-      Utils::imprimirSerial("Reversa", "cyan");
-      Control::moverRuedas('R', 'R'); // Mover ruedas en reversa
+      Utils::imprimirSerial("Reversa v\n", "cyan");
+      Control::moverRuedas('R'); // Mover ruedas en reversa
+
     } else if (comando == "P") {
-      Utils::imprimirSerial("Parar", "cyan");
-      Control::moverRuedas('D', 'D'); // Detener ruedas
+      Utils::imprimirSerial("Parar - \n", "cyan");
+      Control::moverRuedas('P'); // Detener ruedas
+
     } else if (comando == "I") {
-      Utils::imprimirSerial("Izquierda", "cyan");
-      Control::moverRuedas('D', 'A'); // Mover ruedas a la izquierda
+      Utils::imprimirSerial("Izquierda <\n", "cyan");
+      Control::moverRuedas('I'); // Mover ruedas a la izquierda
+
     } else if (comando == "D") {
-      Utils::imprimirSerial("Derecha", "cyan");
-      Control::moverRuedas('A', 'D'); // Mover ruedas a la derecha
+      Utils::imprimirSerial("Derecha >\n", "cyan");
+      Control::moverRuedas('D'); // Mover ruedas a la derecha
+
     } else if (comando == "L") {
       estadoLuces = !estadoLuces; // Cambiar estado de las luces
-      estadoLuces ? Utils::imprimirSerial("Luces encendidas", "cyan") : Utils::imprimirSerial("Luces apagadas", "cyan"); // Cambiar estado de las luces
-      digitalWrite(luces, estadoLuces); // Encender luces
+      estadoLuces ? Utils::imprimirSerial("Luces encendidas }O{\n", "cyan") : Utils::imprimirSerial("Luces apagadas (O)\n", "cyan"); // Cambiar estado de las luces
+      digitalWrite(luces, estadoLuces); // Encender/Apagar luces
+
     } else if (comando == "C") {
-      Utils::imprimirSerial("Claxon activado", "cyan");
+      Utils::imprimirSerial("Claxon activado <})\n", "cyan");
       Utils::blinkPin(claxon, 3, 300); // Activar claxon
+
     } else if (comando == "T") {
-      Utils::imprimirSerial("Test general de control", "cyan");
+      Utils::imprimirSerial("Test general de control [*]\n", "cyan");
       Control::testGeneral(); // Ejecutar test general de control
+
     } else {
-      Utils::imprimirSerial("Comando no reconocido: [" + comando + "]", "rojo"); // Comando no reconocido
+      Utils::imprimirSerial("[x] - Comando no reconocido: [" + comando + "]\n", "rojo"); // Comando no reconocido
     }
   }
 }

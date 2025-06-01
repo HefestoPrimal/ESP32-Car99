@@ -5,6 +5,7 @@ bool DEBUG = true;
 void Utils::iniciar() {
   // Configuración inicial si es necesario
   pinMode(LED_STATUS, OUTPUT);
+  /*
   pinMode(ruedaDelIzqT1, OUTPUT);
   pinMode(ruedaDelDerT1, OUTPUT);
   pinMode(ruedaTraIzqT1, OUTPUT);
@@ -12,11 +13,15 @@ void Utils::iniciar() {
   pinMode(ruedaDelIzqT2, OUTPUT);
   pinMode(ruedaDelDerT2, OUTPUT);
   pinMode(ruedaTraIzqT2, OUTPUT);
-  pinMode(ruedaTraDerT2, OUTPUT);
+  pinMode(ruedaTraDerT2, OUTPUT);*/
+  pinMode(DATA, OUTPUT);
+  pinMode(LATCH, OUTPUT);
+  pinMode(CLOCK, OUTPUT);
   pinMode(luces, OUTPUT);
   pinMode(claxon, OUTPUT);
 
   digitalWrite(LED_STATUS, LOW); // Asegurarse de que el LED de estado esté apagado al inicio
+  /*
   digitalWrite(ruedaDelIzqT1, LOW);
   digitalWrite(ruedaDelDerT1, LOW);
   digitalWrite(ruedaTraIzqT1, LOW);
@@ -24,7 +29,7 @@ void Utils::iniciar() {
   digitalWrite(ruedaDelIzqT2, LOW);
   digitalWrite(ruedaDelDerT2, LOW);
   digitalWrite(ruedaTraIzqT2, LOW);
-  digitalWrite(ruedaTraDerT2, LOW);
+  digitalWrite(ruedaTraDerT2, LOW);*/
   digitalWrite(claxon, LOW);
   digitalWrite(luces, LOW); // Asegurarse de que las luces estén apagadas al inicio
 
@@ -67,14 +72,19 @@ void Utils::blinkPin(int pin, int times, int delayTime) {
   }
 }
 
-void Utils::manejoLed(int pin, int tiempo, int frecuencia) {
-  int tiempoEncendido = tiempo / 2;
-  int tiempoApagado = tiempo - tiempoEncendido;
+void Utils::manejoLed(int pin, int frecuencia, int tiempo) {
+  if (tiempo == 0) {
+    imprimirSerial("Tiempo no puede ser cero", "rojo");
+    return;
+  } else {
+    int Tiempo = tiempo * 1000;
+    int ciclos = Tiempo / (2 * frecuencia);
 
-  for (int i = 0; i < frecuencia; i++) {
-    digitalWrite(pin, HIGH);
-    delay(tiempoEncendido);
-    digitalWrite(pin, LOW);
-    delay(tiempoApagado);
+    for (int i = 0; i < ciclos; i++) {
+      digitalWrite(pin, HIGH);
+      delay(frecuencia);
+      digitalWrite(pin, LOW);
+      delay(frecuencia);
+    }
   }
 }
