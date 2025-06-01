@@ -2,18 +2,18 @@
   #define UTILS_H
   #include <Arduino.h>
 
-  #define ruedaDelIzqT1 21
-  #define ruedaDelIzqT2 21
-  #define ruedaDelDerT1 22
-  #define ruedaDelDerT2 22
+  #define ruedaDelIzqT1 15
+  #define ruedaDelIzqT2 4
+  #define ruedaDelDerT1 5
+  #define ruedaDelDerT2 18
 
-  #define ruedaTraIzqT1 23
-  #define ruedaTraIzqT2 23
-  #define ruedaTraDerT1 19
-  #define ruedaTraDerT2 19
+  #define ruedaTraIzqT1 19
+  #define ruedaTraIzqT2 21
+  #define ruedaTraDerT1 22
+  #define ruedaTraDerT2 23
 
-  #define luces 15
-  #define claxon 4
+  #define luces 13
+  #define claxon 12
   #define LED_STATUS 2
 
   extern bool DEBUG;

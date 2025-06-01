@@ -14,13 +14,13 @@ void Bluetooth::iniciar() {
     Utils::imprimirSerial("Esperando conexión serial...", "amarillo");
     delay(100);
   }
-  Utils::imprimirSerial("Bluetooth iniciado");
+  Utils::imprimirSerial("\nBluetooth iniciado");
 }
 
 void Bluetooth::manejar() {
   if (SerialBT.available()) {
     String comando = Bluetooth::leerComando();
-    Utils::blinkPin(LED_STATUS, 2, 250); // Parpadear LED de estado al recibir un comando
+    Utils::blinkPin(LED_STATUS, 2, 50); // Parpadear LED de estado al recibir un comando
     if (comando == "A") {
       Utils::imprimirSerial("Adelante", "cyan");
       Control::moverRuedas('A', 'A'); // Mover ruedas adelante

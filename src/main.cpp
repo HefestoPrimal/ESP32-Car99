@@ -2,7 +2,7 @@
 #include "bluetooth.h"
 #include "control.h"
 
-String version = "1.1.0.2"; // Proyecto, Mejora, Corrección, Bug
+String version = "1.1.1.2"; // Proyecto, Mejora, Corrección, Bug
 
 void setup() {
   Bluetooth::iniciar();
