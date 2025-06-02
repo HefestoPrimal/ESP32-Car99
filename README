@@ -8,11 +8,11 @@ todos los motores se optimiza utilizando un 74HC595
 
 ## Pines:
   ESP32 Nombre Componente
-    15 - DATA   - (595)
-    4  - LATCH  - (595)
-    5  - CLOCK  - (595)
-    13 - LUCES  - (LEDS)
-    12 - CLAXON - (BUZZER)
+    15 - DATA   - (14 - 74HC595)
+    4  - LATCH  - (12 - 74HC595)
+    5  - CLOCK  - (11 - 74HC595)
+    18 - LUCES  - (LEDS)
+    19 - CLAXON - (BUZZER)
     2  - STATUS - (LED INTEGRADO DE LA ESP32)
     /  -   Q0   - (Motor Izquierdo Delantero Terminal 1 [Adelante])
     /  -   Q1   - (Motor Izquierdo Delantero Terminal 2 [Reversa])

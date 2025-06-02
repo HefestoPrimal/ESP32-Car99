@@ -7,7 +7,7 @@ BluetoothSerial SerialBT; // Crear instancia de BluetoothSerial
 bool estadoLuces = false;
 
 void Bluetooth::iniciar() {
-  Serial.begin(115200);
+  Serial.begin(9600);
   SerialBT.begin("Buggy BT"); // Nombre del dispositivo Bluetooth
   while (!Serial) {
     Utils::blinkPin(LED_STATUS, 2, 750); // Esperar a que la conexión serial esté lista
@@ -23,23 +23,23 @@ void Bluetooth::manejar() {
     Utils::blinkPin(LED_STATUS, 2, 50); // Parpadear LED de estado al recibir un comando
 
     if (comando == "A") {
-      Utils::imprimirSerial("Adelante ^\n", "cyan");
+      Utils::imprimirSerial("Adelante ^", "cyan");
       Control::moverRuedas('A'); // Mover ruedas adelante
 
     } else if (comando == "R") {
-      Utils::imprimirSerial("Reversa v\n", "cyan");
+      Utils::imprimirSerial("Reversa v", "cyan");
       Control::moverRuedas('R'); // Mover ruedas en reversa
 
     } else if (comando == "P") {
-      Utils::imprimirSerial("Parar - \n", "cyan");
+      Utils::imprimirSerial("Parar -", "cyan");
       Control::moverRuedas('P'); // Detener ruedas
 
     } else if (comando == "I") {
-      Utils::imprimirSerial("Izquierda <\n", "cyan");
+      Utils::imprimirSerial("Izquierda <", "cyan");
       Control::moverRuedas('I'); // Mover ruedas a la izquierda
 
     } else if (comando == "D") {
-      Utils::imprimirSerial("Derecha >\n", "cyan");
+      Utils::imprimirSerial("Derecha >", "cyan");
       Control::moverRuedas('D'); // Mover ruedas a la derecha
 
     } else if (comando == "L") {

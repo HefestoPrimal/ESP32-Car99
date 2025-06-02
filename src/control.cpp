@@ -40,34 +40,34 @@ void Control::moverRuedas(char movimiento) {
     digitalWrite(LATCH, LOW);
     shiftOut(DATA, CLOCK, MSBFIRST, movimientoMotores[1]); // Adelante
     digitalWrite(LATCH, HIGH);
-    Utils::imprimirSerial("Avanzando hacia adelante", "amarillo");
+    Utils::imprimirSerial("Avanzando hacia adelante\n", "amarillo");
 
   } else if (movimiento == 'R') {
     digitalWrite(LATCH, LOW);
     shiftOut(DATA, CLOCK, MSBFIRST, movimientoMotores[2]); // Reversa
     digitalWrite(LATCH, HIGH);
-    Utils::imprimirSerial("Avanzando de reversa", "amarillo");
+    Utils::imprimirSerial("Avanzando de reversa\n", "amarillo");
 
   } else if (movimiento == 'P') {
     digitalWrite(LATCH, LOW);
     shiftOut(DATA, CLOCK, MSBFIRST, movimientoMotores[0]); // Detener
     digitalWrite(LATCH, HIGH);
-    Utils::imprimirSerial("Detenerse", "amarillo");
+    Utils::imprimirSerial("Detenerse\n", "amarillo");
 
   } else if (movimiento == 'D') {
     digitalWrite(LATCH, LOW);
     shiftOut(DATA, CLOCK, MSBFIRST, movimientoMotores[4]); // Derecha
     digitalWrite(LATCH, HIGH);
-    Utils::imprimirSerial("Girando a la derecha", "amarillo");
+    Utils::imprimirSerial("Girando a la derecha\n", "amarillo");
 
   } else if (movimiento == 'I') {
     digitalWrite(LATCH, LOW);
     shiftOut(DATA, CLOCK, MSBFIRST, movimientoMotores[3]); // Izquierda
     digitalWrite(LATCH, HIGH);
-    Utils::imprimirSerial("Girando a la izquierda", "amarillo");
+    Utils::imprimirSerial("Girando a la izquierda\n", "amarillo");
 
   } else {
-    Utils::imprimirSerial("Comando no reconocido: " + String(movimiento), "rojo");
+    Utils::imprimirSerial("Comando no reconocido: " + String(movimiento) + "\n", "rojo");
   }
 }
 

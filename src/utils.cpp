@@ -5,15 +5,6 @@ bool DEBUG = true;
 void Utils::iniciar() {
   // Configuración inicial si es necesario
   pinMode(LED_STATUS, OUTPUT);
-  /*
-  pinMode(ruedaDelIzqT1, OUTPUT);
-  pinMode(ruedaDelDerT1, OUTPUT);
-  pinMode(ruedaTraIzqT1, OUTPUT);
-  pinMode(ruedaTraDerT1, OUTPUT);
-  pinMode(ruedaDelIzqT2, OUTPUT);
-  pinMode(ruedaDelDerT2, OUTPUT);
-  pinMode(ruedaTraIzqT2, OUTPUT);
-  pinMode(ruedaTraDerT2, OUTPUT);*/
   pinMode(DATA, OUTPUT);
   pinMode(LATCH, OUTPUT);
   pinMode(CLOCK, OUTPUT);
@@ -21,19 +12,10 @@ void Utils::iniciar() {
   pinMode(claxon, OUTPUT);
 
   digitalWrite(LED_STATUS, LOW); // Asegurarse de que el LED de estado esté apagado al inicio
-  /*
-  digitalWrite(ruedaDelIzqT1, LOW);
-  digitalWrite(ruedaDelDerT1, LOW);
-  digitalWrite(ruedaTraIzqT1, LOW);
-  digitalWrite(ruedaTraDerT1, LOW);
-  digitalWrite(ruedaDelIzqT2, LOW);
-  digitalWrite(ruedaDelDerT2, LOW);
-  digitalWrite(ruedaTraIzqT2, LOW);
-  digitalWrite(ruedaTraDerT2, LOW);*/
   digitalWrite(claxon, LOW);
   digitalWrite(luces, LOW); // Asegurarse de que las luces estén apagadas al inicio
 
-  Utils::blinkPin(LED_STATUS, 3, 350); // Parpadear el LED de estado al iniciar
+  Utils::blinkPin(LED_STATUS, 3, 250); // Parpadear el LED de estado al iniciar
 
   imprimirSerial("Utils iniciados", "verde");
 }
