@@ -6,7 +6,7 @@ adelante y hacia atras individualmente, en vez de utilizar 8 salidas para
 todos los motores se optimiza utilizando un 74HC595
 
 ## Pines:
-  ESP32 Nombre Componente
+  - ESP32 Nombre Componente
     * 15 - DATA   - (14 - 74HC595)
     * 4  - LATCH  - (12 - 74HC595)
     * 5  - CLOCK  - (11 - 74HC595)
