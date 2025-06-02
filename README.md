@@ -6,18 +6,18 @@ adelante y hacia atras individualmente, utilizando 8 salidas para cada
 terminal de motor
 
 ## Pines:
-  ESP32 Nombre Componente
-    15 -   Q0   - (Motor Izquierdo Delantero Terminal 1 [Adelante])
-    4  -   Q1   - (Motor Izquierdo Delantero Terminal 2 [Reversa])
-    5  -   Q2   - (Motor Derecho Delantero Terminal 1 [Adelante])
-    18 -   Q3   - (Motor Derecho Delantero Terminal 2 [Reversa])
-    19 -   Q4   - (Motor Izquierdo Trasero Terminal 1 [Adelante])
-    21 -   Q5   - (Motor Izquierdo Trasero Terminal 2 [Reversa])
-    22 -   Q6   - (Motor Izquierdo Trasero Terminal 1 [Adelante])
-    23 -   Q7   - (Motor Izquierdo Trasero Terminal 2 [Reversa])
-    13 - LUCES  - (LEDS)
-    12 - CLAXON - (BUZZER)
-    2  - STATUS - (LED INTEGRADO DE LA ESP32)
+  - ESP32 Nombre Componente
+    * 15 -   Q0   - (Motor Izquierdo Delantero Terminal 1 [Adelante])
+    * 4  -   Q1   - (Motor Izquierdo Delantero Terminal 2 [Reversa])
+    * 5  -   Q2   - (Motor Derecho Delantero Terminal 1 [Adelante])
+    * 18 -   Q3   - (Motor Derecho Delantero Terminal 2 [Reversa])
+    * 19 -   Q4   - (Motor Izquierdo Trasero Terminal 1 [Adelante])
+    * 21 -   Q5   - (Motor Izquierdo Trasero Terminal 2 [Reversa])
+    * 22 -   Q6   - (Motor Izquierdo Trasero Terminal 1 [Adelante])
+    * 23 -   Q7   - (Motor Izquierdo Trasero Terminal 2 [Reversa])
+    * 13 - LUCES  - (LEDS)
+    * 12 - CLAXON - (BUZZER)
+    * 2  - STATUS - (LED INTEGRADO DE LA ESP32)
 
 ## Uso
 
