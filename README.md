@@ -23,7 +23,9 @@ terminal de motor
 
  - Encender el ESP32.
  - Esperar a que el LED parpadee 3 veces indicando que el Bluetooth esta encendido y listo para recibir datos
- - Usar los comandos para controlar el coche
+  - Se puede utilizar una aplicación de Terminal Bluetooth con parámetros ajustables y enviar comandos a través de botones personalizables, ejemplo: 
+ https://play.google.com/store/apps/details?id=de.kai_morich.serial_bluetooth_terminal
+ - Usar los comandos para controlar el coche desde la aplicación
    - A -> Avanzar
    - P -> Parar
    - I -> Izquierda
