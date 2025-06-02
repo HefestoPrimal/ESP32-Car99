@@ -1,4 +1,3 @@
-
 # ESP Car 32
 
 Proyecto para controlar un coche con 4 motores, un juego de luces frontales 
@@ -8,20 +7,20 @@ todos los motores se optimiza utilizando un 74HC595
 
 ## Pines:
   ESP32 Nombre Componente
-    15 - DATA   - (14 - 74HC595)
-    4  - LATCH  - (12 - 74HC595)
-    5  - CLOCK  - (11 - 74HC595)
-    18 - LUCES  - (LEDS)
-    19 - CLAXON - (BUZZER)
-    2  - STATUS - (LED INTEGRADO DE LA ESP32)
-    /  -   Q0   - (Motor Izquierdo Delantero Terminal 1 [Adelante])
-    /  -   Q1   - (Motor Izquierdo Delantero Terminal 2 [Reversa])
-    /  -   Q2   - (Motor Derecho Delantero Terminal 1 [Adelante])
-    /  -   Q3   - (Motor Derecho Delantero Terminal 2 [Reversa])
-    /  -   Q4   - (Motor Izquierdo Trasero Terminal 1 [Adelante])
-    /  -   Q5   - (Motor Izquierdo Trasero Terminal 2 [Reversa])
-    /  -   Q6   - (Motor Izquierdo Trasero Terminal 1 [Adelante])
-    /  -   Q7   - (Motor Izquierdo Trasero Terminal 2 [Reversa])
+    * 15 - DATA   - (14 - 74HC595)
+    * 4  - LATCH  - (12 - 74HC595)
+    * 5  - CLOCK  - (11 - 74HC595)
+    * 18 - LUCES  - (LEDS)
+    * 19 - CLAXON - (BUZZER)
+    * 2  - STATUS - (LED INTEGRADO DE LA ESP32)
+    * /  -   Q0   - (Motor Izquierdo Delantero Terminal 1 [Adelante])
+    * /  -   Q1   - (Motor Izquierdo Delantero Terminal 2 [Reversa])
+    * /  -   Q2   - (Motor Derecho Delantero Terminal 1 [Adelante])
+    * /  -   Q3   - (Motor Derecho Delantero Terminal 2 [Reversa])
+    * /  -   Q4   - (Motor Izquierdo Trasero Terminal 1 [Adelante])
+    * /  -   Q5   - (Motor Izquierdo Trasero Terminal 2 [Reversa])
+    * /  -   Q6   - (Motor Izquierdo Trasero Terminal 1 [Adelante])
+    * /  -   Q7   - (Motor Izquierdo Trasero Terminal 2 [Reversa])
 
 ## Uso
 
