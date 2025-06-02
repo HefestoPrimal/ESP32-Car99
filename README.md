@@ -6,7 +6,7 @@ adelante y hacia atras individualmente, en vez de utilizar 8 salidas para
 todos los motores se optimiza utilizando un 74HC595
 
 ## Pines:
-  - ESP32 Nombre Componente
+  - ESP32 - Nombre - Componente
     * 15 - DATA   - (14 - 74HC595)
     * 4  - LATCH  - (12 - 74HC595)
     * 5  - CLOCK  - (11 - 74HC595)
@@ -26,7 +26,9 @@ todos los motores se optimiza utilizando un 74HC595
 
  - Encender el ESP32.
  - Esperar a que el LED parpadee 3 veces indicando que el Bluetooth esta encendido y listo para recibir datos
- - Usar los comandos para controlar el coche
+ - Se puede utilizar una aplicación de Terminal Bluetooth con parámetros ajustables y enviar comandos a través de botones personalizables, ejemplo: 
+ https://play.google.com/store/apps/details?id=de.kai_morich.serial_bluetooth_terminal
+ - Usar los comandos para controlar el coche desde la aplicación
    - A -> Avanzar
    - P -> Parar
    - I -> Izquierda
